@@ -285,17 +285,17 @@ const Carousel = ({debug, elements, methods = null}) => {
         let diffY = downY - downYend
 
         carouselSwipeWrapper.style.transition = transition
-        widthToSwipeSlide = dimensions.width > 1024 ? carouselSwipeWrapperWidth / 3 : carouselSwipeWrapperWidth / 2
+        widthToSwipeSlide = dimensions.width > 1024 ? carouselSwipeWrapperWidth / 4 : carouselSwipeWrapperWidth / 3
 
         if (Math.abs(diffX) > Math.abs(diffY)) {
             if (diffX > 0) {
-                if ((widthToSwipeSlide <= downX - downXend) || moveTimeDiff < 100) {
+                if ((widthToSwipeSlide <= downX - downXend) || moveTimeDiff < 150) {
                     carouselSwipeTransformItem('right')
                 } else {
                     carouselSwipeWrapper.style.left = transform + 'px'
                 }
             } else {
-                if (-widthToSwipeSlide >= downX - downXend || moveTimeDiff < 100) {
+                if (-widthToSwipeSlide >= downX - downXend || moveTimeDiff < 150) {
                     carouselSwipeTransformItem('left')
                 } else {
                     carouselSwipeWrapper.style.left = transform + 'px'
