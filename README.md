@@ -1,16 +1,16 @@
-# React Instagram slider
+# Touch Web & Mobile Carousel for React.js
 
 ## Project setup
 ```
-npm install
+yarn install
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm start
+yarn start
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+yarn run build
 ```
