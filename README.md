@@ -34,35 +34,57 @@ Todo:
 - Supports multiple slides on the screen
 - Supports infinite option
 
-## API
+## Props
 
 Props | Values | Default | Description
 ------------ | ------------- | ------------- | -------------
 debug | true/false | false | Enable or disable debug information
-elements | array / func | [] | Collection of carousele slides
-methods | func | null | Slider exported API callback function
+children | React.element[] | [] | Collection of carousel slides
+ref | React.ref | undefined | Refernece for accessing to exported API methods
+dotsVisibility | true/false | true | Show/Hide dots pagination
+arrowsVisibility | true/false | true | Show/Hide Prev/Next buttons
+
+## API
+
+To access to internal Carousel API use <a href="https://ru.reactjs.org/docs/refs-and-the-dom.html">React.ref</a>
+
+Method | Values | Default | Description
+------------ | ------------- | ------------- | -------------
+goToSlide | Number | 1 | Method allows to switch to corresponding carousel slide
 
 ## Example
 
 ```javascript
 const App = () => {
-    let carousel = null
+    const carousel = useRef()
+    const [arrowsVisible, setArrowsVisible] = useState(true)
+    const [dotsVisible, setDotsVisible] = useState(true)
 
-    let elements = [1, () => <img className={'customClassName'} src={"https://bit.ly/2Y3XgWP"} />, 3,  4, 5, 6, 7]
-
-    const onClickHandler = (page) => () => carousel.goToSlide(page)
-
+    const onClickHandler = (page) => () => carousel.current.goToSlide(page)
+    
     return (
         <>
-            <div style={{height: '40em'}}>
-                <Carousel
-                    methods={m => carousel = m}
-                    debug={true}
-                    elements={elements}
-                />
+            <div style={{height: '30em'}}>
+                <Carousel ref={carousel}
+                          dotsVisibility={dotsVisible}
+                          arrowsVisibility={desktopArrowsVisible}>
+                    <div key={'item-1'}>1</div>
+                    <img key={'item-2'} className={'customClassName'} 
+                         src={"https://bit.ly/2Y3XgWP"}/>
+                    <div key={'item-3'}>3</div>
+                </Carousel>
             </div>
-            <button className={'btn'} onClick={onClickHandler(1)}>Go to slide 1</button>
-            <button className={'btn'} onClick={onClickHandler(7)}>Go to slide 7</button>
+            <button onClick={onClickHandler(1)}>Go to slide 1</button>
+            <button onClick={onClickHandler(3)}>Go to slide 3</button>
+            <label>
+                <input type="checkbox" checked={arrowsVisible} onChange={() => setArrowsVisible(!arrowsVisible)}/>
+                Toggle Next/Prev visibility
+            </label>
+
+            <label>
+                <input type="checkbox" checked={dotsVisible} onChange={() => setDotsVisible(!dotsVisible)}/>
+                Toggle dots visibility
+            </label>
         </>
     )
 };
