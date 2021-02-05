@@ -40,7 +40,7 @@ Props | Values | Default | Description
 ------------ | ------------- | ------------- | -------------
 debug | true/false | false | Enable or disable debug information
 children | React.element[] | [] | Collection of carousel slides
-ref | React.ref | undefined | Refernece for accessing to exported API methods
+ref | React.ref | undefined | Reference for accessing to exported API methods
 dotsVisibility | true/false | true | Show/Hide dots pagination
 arrowsVisibility | true/false | true | Show/Hide Prev/Next buttons
 
