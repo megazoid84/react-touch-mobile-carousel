@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react"
+import PropTypes from "prop-types"
 
 const CarouselButton = ({type, isVisible, onButtonClick}) => (
     <>{
@@ -10,9 +11,17 @@ const CarouselButton = ({type, isVisible, onButtonClick}) => (
     }</>
 )
 
-export default ({leftControl, rightControl, onButtonClick}) => (
+const CarouselButtons = ({leftControl, rightControl, onButtonClick}) => (
     <div>
         <CarouselButton type="left" isVisible={leftControl} onButtonClick={onButtonClick}/>
         <CarouselButton type="right" isVisible={rightControl} onButtonClick={onButtonClick}/>
     </div>
 )
+
+CarouselButtons.propTypes = {
+    leftControl: PropTypes.bool.isRequired,
+    rightControl: PropTypes.bool.isRequired,
+    onButtonClick: PropTypes.func.isRequired
+}
+
+export default CarouselButtons

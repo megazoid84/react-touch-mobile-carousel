@@ -2,12 +2,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #fff;
 }
 
 .btn {
-  margin-top: 1em;
-  font-size: 1.7em;
+  font-size: 1em;
   padding: 10px;
-  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.management-area {
+  margin: 2em;
+}
+
+.management-area label {
+  margin-right: 1em;
 }

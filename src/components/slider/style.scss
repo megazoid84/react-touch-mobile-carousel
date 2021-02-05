@@ -1,3 +1,6 @@
+.carousel {
+  height: 100%;
+}
 .carousel-swipe {
   position: relative;
   overflow: hidden;
@@ -96,8 +99,30 @@
   text-align: center;
 }
 
-@media (min-width: 600px) and (max-width: 1200px) {
-  .carousel-swipe__control_show {
-    display: none;
+.carousel-dots {
+  height: auto;
+  text-align: center;
+  bottom: 4em;
+  position: relative;
+  ul {
+    list-style: none;
+    margin-right: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      &:before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        background-color: rgb(255, 255, 255, 0.5);
+        display: inline-block;
+        border-radius: 50%;
+        cursor: pointer;
+        margin: 0 15px;
+      }
+      &.active:before {
+        background-color: white;
+      }
+    }
   }
 }
