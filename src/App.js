@@ -5,7 +5,7 @@ import './style.scss'
 
 const App = () => {
     const carousel = useRef()
-    const [desktopArrowsVisible, setDesktopArrowsVisible] = useState(true)
+    const [arrowsVisible, setArrowsVisible] = useState(true)
     const [dotsVisible, setDotsVisible] = useState(true)
 
     const onClickHandler = (page) => {
@@ -17,7 +17,7 @@ const App = () => {
             <div style={{height: '30em'}}>
                 <Carousel ref={carousel}
                           dotsVisibility={dotsVisible}
-                          arrowsVisibility={desktopArrowsVisible}>
+                          arrowsVisibility={arrowsVisible}>
                     <div key={'item-1'}>1</div>
                     <img key={'item-2'} className={'customClassName'}
                          src={"https://bit.ly/2Y3XgWP"}/>
@@ -37,8 +37,8 @@ const App = () => {
 
                 <label className={'management-area__desktop-arrows'}>
                     <input type="checkbox"
-                           checked={desktopArrowsVisible}
-                           onChange={() => setDesktopArrowsVisible(!desktopArrowsVisible)}/> Toggle Next/Prev visibility
+                           checked={arrowsVisible}
+                           onChange={() => setArrowsVisible(!arrowsVisible)}/> Toggle Next/Prev visibility
                 </label>
 
                 <label>
