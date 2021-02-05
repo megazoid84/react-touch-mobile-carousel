@@ -23,9 +23,9 @@ How it works - https://react-touch-mobile-carousel.web.app
 It's a carousel component that works on mobile and desktop.
 
 Library supports next features:
-- Work for mobile and desktop devices
-- Support swipes
-- Work for any HTML content
+- Works for mobile and desktop devices
+- Swipe gesture supports
+- Works for any HTML content
 - Animated
 - Spports finger-following swipes (multi-picture post in Instagram was taken as a reference)
 - Supports scrolling to a selected slide (like go to slide X)
